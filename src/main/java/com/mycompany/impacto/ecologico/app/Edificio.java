@@ -36,4 +36,19 @@ public class Edificio {
     public String getTipo() {
         return tipo;
     }
+    
+        public double obtenerImpactoEcologico() {
+        // Lógica para calcular el impacto ecológico considerando varios atributos de consumo
+        double impactoPorPisos = 20.0 * numeroPisos;
+        double impactoLuz = 2.0 * consumoLuz;
+        double impactoDesechos = 5.0 * cantidadDesechos;
+        double impactoAgua = 1.5 * consumoAgua;
+        double impactoPersonas = 3.0 * cantidadPersonas;
+        double impactoRenovable = utilizaEnergiaRenovable ? -5.0 : 0.0; // Descuento si utiliza energía renovable
+        double impactoAreasVerdes = tieneAreasVerdes ? -2.0 : 0.0; // Descuento si tiene áreas verdes
+        double impactoTransporte = 1.8 * emisionesTransporte; // Ajustar según la realidad
+
+        return impactoPorPisos + impactoLuz + impactoDesechos + impactoAgua +
+                impactoPersonas + impactoRenovable + impactoAreasVerdes + impactoTransporte;
+    }
 }

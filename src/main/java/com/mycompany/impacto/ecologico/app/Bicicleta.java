@@ -34,4 +34,18 @@ public class Bicicleta{
     public String getTipo() {
         return tipo;
     }
+    
+        public double obtenerImpactoEcologico() {
+        // Lógica para calcular el impacto ecológico considerando varios atributos de consumo
+        double impactoEngranajes = 1.2 * numeroEngranajes;
+        double impactoReciclado = utilizaMaterialesReciclados ? -2.0 : 0.0;
+        double impactoNeumaticos = tieneNeumaticosInflados ? -1.5 : 0.0;
+        double impactoFrenos = utilizaFrenosReciclables ? -1.0 : 0.0;
+        double impactoPeso = 0.8 * peso;
+        double impactoFabricacion = 2.0 * (2023 - fabricacionAnio); // Ajustar según la realidad
+        double impactoDistancia = 0.5 * distanciaPromedioRecorrida;
+
+        return impactoEngranajes + impactoReciclado + impactoNeumaticos +
+                impactoFrenos + impactoPeso + impactoFabricacion + impactoDistancia;
+    }
 }

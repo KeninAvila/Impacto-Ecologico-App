@@ -40,5 +40,18 @@ public class Auto {
     public String getModelo() {
         return modelo;
     }
+    
+    public double obtenerImpactoEcologico() {
+        // Lógica para calcular el impacto ecológico considerando varios atributos de consumo
+        double impactoCO2 = 3.0 * emisionesCO2;
+        double impactoCombustible = 2.5 * consumoCombustible;
+        double impactoCatalitico = tieneConvertidorCatalitico ? -4.0 : 0.0;
+        double impactoHibrido = esHibrido ? -3.5 : 0.0;
+        double impactoBiocombustible = utilizaBiocombustible ? -2.0 : 0.0;
+        double impactoPasajeros = 1.2 * capacidadPasajeros;
+
+        return impactoCO2 + impactoCombustible + impactoCatalitico +
+                impactoHibrido + impactoBiocombustible + impactoPasajeros;
+    }
 }
 
