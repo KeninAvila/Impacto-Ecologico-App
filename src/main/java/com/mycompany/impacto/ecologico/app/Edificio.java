@@ -8,7 +8,7 @@ package com.mycompany.impacto.ecologico.app;
  *
  * @author Usuario
  */
-public class Edificio {
+public class Edificio implements ImpactoEcologico {
     private String tipo;
     private int numeroPisos;
     private double consumoLuz;
@@ -37,6 +37,7 @@ public class Edificio {
         return tipo;
     }
     
+    @Override
         public double obtenerImpactoEcologico() {
         // Lógica para calcular el impacto ecológico considerando varios atributos de consumo
         double impactoPorPisos = 20.0 * numeroPisos;

@@ -8,7 +8,7 @@ package com.mycompany.impacto.ecologico.app;
  *
  * @author Usuario
  */
-public class Bicicleta{
+public class Bicicleta implements ImpactoEcologico {
     private String tipo;
     private int numeroEngranajes;
     private boolean utilizaMaterialesReciclados;
@@ -35,6 +35,7 @@ public class Bicicleta{
         return tipo;
     }
     
+    @Override
         public double obtenerImpactoEcologico() {
         // Lógica para calcular el impacto ecológico considerando varios atributos de consumo
         double impactoEngranajes = 1.2 * numeroEngranajes;

@@ -8,7 +8,7 @@ package com.mycompany.impacto.ecologico.app;
  *
  * @author Usuario
  */
-public class Auto {
+public class Auto implements ImpactoEcologico {
     private String marca;
     private String modelo;
     private int añoFabricacion;
@@ -41,6 +41,7 @@ public class Auto {
         return modelo;
     }
     
+    @Override
     public double obtenerImpactoEcologico() {
         // Lógica para calcular el impacto ecológico considerando varios atributos de consumo
         double impactoCO2 = 3.0 * emisionesCO2;
